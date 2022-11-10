@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Sauce demo">
+    <listeners>
+        <listener class-name="Report.Listener"/>
+    </listeners>
+    <test name="Verify user is able to login in">
+        <parameter name="browserName" value="chrome"/>
+        <classes>
+            <class name="test.Testtoverifyloginpage"/>
+        </classes>
+    </test>
+</suite>
