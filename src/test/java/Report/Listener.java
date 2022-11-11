@@ -10,31 +10,28 @@ public class Listener implements ITestListener {
     ExtentReports extent = ExtentReport.extentReportGenerator();
     ExtentTest test;
     WebDriver driver;
-    public void onFinish(ITestContext context) {
-        extent.flush();
-    }
 
-
+@Override
     public void onTestStart(ITestResult result) {
         test = extent.createTest(result.getMethod().getMethodName());
     }
-
+    @Override
     public void onTestSuccess(ITestResult result) {
 
         test.log(Status.PASS, "No Issues encountered!");
     }
-
+    @Override
     public void onTestFailure(ITestResult result) {
         test.fail(result.getThrowable());
     }
-
+    @Override
     public void onTestSkipped(ITestResult result) {
     }
-
+    @Override
     public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
     }
 
-
+    @Override
     public void onStart(ITestContext context) {
     }
 }

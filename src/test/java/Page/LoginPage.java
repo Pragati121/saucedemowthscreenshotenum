@@ -10,12 +10,13 @@ import java.io.IOException;
 import java.time.Duration;
 public class LoginPage extends Baseclass {
    static WebDriver driver;
-   WebDriverWait wait;
+    WebDriverWait wait;
     String UsernameAndPassword = "//input[@name='%s']";
     String OpenAndCloseSieBar ="//button[@id='react-burger-menu-btn']";
     By Aboutpage =By.xpath("(//a[contains(@class,'menu-item')])[2]");
     By addItemToCart =By.xpath("//button[@name='add-to-cart-sauce-labs-backpack']");
-    By clickOnAddTocartButton=By.xpath("//a[@class='shopping_cart_link']");
+    By clickOnAddTocartButton=By.xpath("//a[@class='shopping_cart_lin']");
+    By Clickoncheckout = By.xpath("//button[@name='checkout']");
 
     public LoginPage(WebDriver driver) {
         this.driver = driver;
@@ -34,8 +35,8 @@ public class LoginPage extends Baseclass {
         driver.navigate().refresh();
         driver.findElement(addItemToCart).click();
         driver.findElement(clickOnAddTocartButton).click();
-        takeScreenshot("Cart_Page");
-
+        driver.findElement(Clickoncheckout).click();
+        //in testng.xml listener  is used for generting scresnhot for report i will use Report.Listener
     }
 }
 
